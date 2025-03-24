@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import {PriceConverter} from "./contracts/PriceConverter.sol";
+import {PriceConvert} from "./PriceConverter.sol";
 
 contract FundMe {
-    using PriceConverter for uint256;
+    using PriceConvert for uint256;
     uint256 public minimumUsd = 5 * 1e18;
 
     address[] public funders;
@@ -18,6 +18,4 @@ contract FundMe {
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
     }
-
-    
 }
