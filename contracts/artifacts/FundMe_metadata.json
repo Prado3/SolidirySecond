@@ -1,10 +1,29 @@
 {
 	"compiler": {
-		"version": "0.8.25+commit.b61c2a91"
+		"version": "0.8.24+commit.e11b9ed9"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "founder",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountFunded",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
 			{
 				"inputs": [],
 				"name": "fund",
@@ -13,10 +32,41 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "funders",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
+					}
+				],
 				"name": "getConversionRate",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -74,7 +124,7 @@
 		"compilationTarget": {
 			"contracts/FundMe.sol": "FundMe"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -95,11 +145,11 @@
 			]
 		},
 		"contracts/FundMe.sol": {
-			"keccak256": "0x275d261bbcfcff9105cabc0adf6ae23f28554ae94ba991715a04919a9c45e884",
+			"keccak256": "0xf3140c64be8b904f35fc8324cbf3f9c1352f620a9f06afcce5d9c8a0676c6be3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3e2b2d8c6a57473a66936f6a692bd839af1d8389a7d50795d89631d345531bda",
-				"dweb:/ipfs/QmfNM8rnui1VrRyLTEwuX5hFDxPxhzixwxPJsjpFPtbb6D"
+				"bzz-raw://2c2e918155a916bd1f4eb32ef8508ad723d9e5871d2640b9bbc73e910101a8a9",
+				"dweb:/ipfs/QmPMgY2yDuQZWZKFy9BgVww5SdbqdR6w36kJQBP4WRahJ1"
 			]
 		}
 	},
