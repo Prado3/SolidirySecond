@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import {PriceConvert} from "./PriceConverter.sol";
+import {PriceConverter} from "./PriceConverter.sol";
 
 contract FundMe {
-    using PriceConvert for uint256;
+    using PriceConverter for uint256;
     uint256 public minimumUsd = 5 * 1e18;
 
     address[] public funders;
@@ -17,5 +17,12 @@ contract FundMe {
         require(msg.value.getConversionRate() >= minimumUsd,"didn t send enough ETH");
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
+    }
+
+    function withdraw () public {
+        for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++){
+            address funder = funders[funderIndex];
+            addressToAmountFunded[funder] = 0;
+        }
     }
 }
